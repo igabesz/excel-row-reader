@@ -1,0 +1,23 @@
+{
+  "name": "excel-row-reader",
+  "version": "0.0.0",
+  "description": "Excel streaming row reader",
+  "main": "lib/index.js",
+  "typings": "lib/index",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "excel",
+    "xls",
+    "xlsx",
+    "stream",
+    "streaming"
+  ],
+  "author": "Gábor IMRE",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "pyspreadsheet": "^0.1.5"
+  }
+}
