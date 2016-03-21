@@ -1,6 +1,6 @@
 {
   "name": "excel-row-reader",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Excel streaming row reader",
   "main": "lib/index.js",
   "typings": "lib/index",

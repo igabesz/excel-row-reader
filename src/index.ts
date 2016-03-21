@@ -66,7 +66,7 @@ export class FileReaderBase {
 			processor.open(workbook);
 		})
 		.on('data', (data: PYSpreadsheet.Data) => {
-			if (this.canContinue()) {
+			if (!this.canContinue()) {
 				if (!this.exiting) {
 					this.logger('fatal', `Reading aborted at row ${rowCnt}`);
 					this.exiting = true;
