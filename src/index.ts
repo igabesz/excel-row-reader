@@ -2,12 +2,37 @@ import * as _ from 'lodash';
 import * as PYSpreadsheet from 'pyspreadsheet';
 
 
+// Currently copy-pasted from include.d.ts, no idea how to do better
+export interface Workbook {
+	file: string;
+	meta: {
+		user: string;
+		sheets: Sheet[];
+	};
+}
+export interface Sheet {
+	index: number;
+	name: string;
+	bounds: {
+		rows: number;
+		columns: number;
+	};
+	visibility: string;
+}
+export interface Cell {
+	row: number;
+	column: number;
+	address: string;
+	value: any;
+}
+
+
 export interface IWorkbookProcessor {
 	headerCnt: number;
 	preOpen?(): void;
-	open?(workbook: PYSpreadsheet.Workbook): void;
-	processHeader?(row: PYSpreadsheet.Cell[], index: number): void;
-	processRow(row: PYSpreadsheet.Cell[], sheet: PYSpreadsheet.Sheet): void;
+	open?(workbook: Workbook): void;
+	processHeader?(row: Cell[], index: number): void;
+	processRow(row: Cell[], sheet: Sheet): void;
 	close?(): void;
 }
 
